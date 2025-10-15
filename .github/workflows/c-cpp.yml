@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C Bootloader CI
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +17,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y build-essential
 
       - name: Build bootloader
-        run: make
+        run: make clean && make
 
       - name: Run bootloader simulation
-        run: ./bootloader_sim
+        run: ./bootloader
