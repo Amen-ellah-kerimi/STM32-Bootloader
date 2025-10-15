@@ -1,6 +1,7 @@
+#include "bootloader.h"
 #include <stdio.h>
 
-int main(){
-    printf("hello, world");
+int main() {
+    bootloader_main();
     return 0;
 }
