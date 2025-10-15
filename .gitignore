@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+./bootloader_sim.exe
+./app.bin
