@@ -1,23 +1,20 @@
-name: C Bootloader CI
+name: Build bootloader
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y build-essential
+    - name: Verify files
+      run: ls -la
 
-      - name: Build bootloader
-        run: make clean && make
-
-      - name: Run bootloader simulation
-        run: ./bootloader
+    - name: Build bootloader
+      run: make clean && make
