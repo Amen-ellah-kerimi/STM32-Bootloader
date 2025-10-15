@@ -1,13 +1,24 @@
-CC = gcc
-CFLAGS = -Wall -g -Iinc
-TARGET = bootloader_sim
+name: C/C++ CI
 
-SRCS = src/main.c src/bootloader.c src/crc32.c src/flash.c
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-all: $(TARGET)
+jobs:
+  build:
 
-$(TARGET): $(SRCS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRCS)
+    runs-on: ubuntu-latest
 
-clean:
-	rm -f $(TARGET)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      - name: Build
+        run: make
+
+      - name: Run Bootloader Simulation
+        run: ./bootloader_sim
