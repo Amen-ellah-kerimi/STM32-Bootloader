@@ -3,5 +3,5 @@
 *.log
 tmp/
 
-./bootloader_sim.exe
-./app.bin
+bootloader_sim.exe
+app.bin
