@@ -1,8 +1,8 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-#include <crc32.h>
-#include <flash.h>
+#include "../inc/crc32.h"
+#include "../inc/flash.h"
 
 #define APP_START_ADDR 0x08004000
 #define APP_SIZE 0x20000

@@ -1,4 +1,4 @@
-#include "flash.h"
+#include "../inc/flash.h"
 #include <string.h>
 #include <stdio.h>
 
